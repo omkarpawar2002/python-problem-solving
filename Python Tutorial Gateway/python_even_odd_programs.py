@@ -55,12 +55,8 @@ for i in range(10,0,-1):
 
 # Python Program to Print First 10 Odd Natural Numbers
 '''
-count = 0
-for i in range(1,100):
-    if(i % 2 != 0):
-        if(count < 10):
-            print(i)
-            count += 1
+for i in range(1,20,2):
+    print(i)
 '''
 
 # Python Program to find the Sum and Average of Natural Numbers
@@ -91,10 +87,9 @@ print(f"Total of {count} number are : {total} \nAverage is {average}")
 total = count = 0
 while count < 10:
     num = int(input("Enter any number : "))
-    count += 1
-    if(num < 0):
-        continue
-    total += num
+    if(num > 0):
+        total += num
+        count += 1
     
 print(f"Total of {count} number are : {total}")
 '''
