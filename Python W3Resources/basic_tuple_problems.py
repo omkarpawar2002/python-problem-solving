@@ -1,5 +1,3 @@
-# Python Tuple Exercises (1–33)
-
 # 1. Create a Tuple
 # Write a Python program to create a tuple.
 '''
@@ -147,53 +145,161 @@ print(d)
 
 # 17. Unzip a List of Tuples into Individual Lists
 # Write a Python program to unzip a list of tuples into individual lists.
-
-
+'''
+li = [(1, 2), (3, 4), (8, 9)]
+print(list(zip(*li)))
+'''
 
 # 18. Reverse a Tuple
 # Write a Python program to reverse a tuple.
+'''
+t = (10,20,30,40,50)
+print(f"Original Tuple : {t}")
+print(f"Reversed Tuple : {t[::-1]}")
+'''
 
 # 19. Convert a List of Tuples into a Dictionary
 # Write a Python program to convert a list of tuples into a dictionary.
+'''
+li = [("x", 1), ("x", 2), ("x", 3), ("y", 1), ("y", 2), ("z", 1)]
+d = {}
+for key,value in li:
+    d.setdefault(key,[]).append(value)
+print(d)
+'''
 
 # 20. Print Tuple with String Formatting
 # Write a Python program to print a tuple with string formatting.
+'''
+t = (10,20,30,40)
+print(f"This is a tuple : {t}")
+'''
 
 # 21. Replace the Last Value of Tuples in a List
 # Write a Python program to replace the last value of tuples in a list.
+'''
+t = [(10, 20, 40), (40, 50, 60), (70, 80, 90)]
+print(f"Original Tuple : {t}")
+new_li = []
+for element in t:
+    new_ele = list(element)
+    new_ele[-1] = 100
+    new_li.append(tuple(new_ele))
+print(new_li)
+'''
 
 # 22. Remove Empty Tuple(s) from a List of Tuples
 # Write a Python program to remove empty tuple(s) from a list of tuples.
+'''
+li = [(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]
+li = [i for i in li if(i)]
+print(li)
+'''
 
 # 23. Sort a Tuple by Its Float Element
 # Write a Python program to sort a tuple by its float element.
+'''
+li = [('item1', '12.20'), ('item2', '15.10'), ('item3', '24.5')]
+print(f"Original : {li}")
+print(sorted(li,reverse=True))
+'''
 
 # 24. Count Elements in a List Until an Element is a Tuple
 # Write a Python program to count the elements in a list until an element is a tuple.
+'''
+num = [10, 20, 30, (10, 20), 40]
+count_ele = 0
+for ele in num:
+    if(type(ele) != tuple):
+        count_ele += 1
+    else:
+        break
+print(f"Total Elements : {count_ele}")
+'''
 
 # 25. Convert a Given String List to a Tuple
 # Write a Python program to convert a given string list to a tuple.
+'''
+st = "python 3.0"
+li = [i for i in st if(not i.isspace())]
+print(tuple(li))
+'''
 
 # 26. Calculate the Product of Numbers in a Tuple
 # Write a Python program to calculate the product of numbers in a tuple.
+'''
+t = (4, 3, 2, 2, -1, 18)
+product = 1
+for i in t:
+    product *= i
+print(f"Product - multiplying all the numbers of the said tuple : {product}")
+'''
 
 # 27. Calculate Average Value of Numbers in a Tuple of Tuples
 # Write a Python program to calculate the average value of numbers in a tuple of tuples.
 
+
+
+
 # 28. Convert a Tuple of String Values to a Tuple of Integer Values
 # Write a Python program to convert a tuple of string values to a tuple of integer values.
+'''
+t = (('333', '33'), ('1416', '55'))
+print(f"Original Tuple : {t}")
+li = []
+for element in t:
+    new_li = []
+    for ele in element:
+        new_li.append(int(ele))
+    li.append(tuple(new_li))
+print(f"Updated Tuple : {tuple(li)}")
+'''
 
 # 29. Convert a Tuple of Positive Integers into an Integer
 # Write a Python program to convert a tuple of positive integers into an integer.
+'''
+t = (1,2,3)
+s = ''
+for i in t:
+    s += str(i)
+print(int(s))
+'''
 
 # 30. Check if a Specified Element Appears in a Tuple of Tuples
 # Write a Python program to check if a specified element appears in a tuple of tuples.
+'''
+t = (('Red', 'White', 'Blue'), ('Green', 'Pink', 'Purple'), ('Orange', 'Yellow', 'Lime'))
+li = [j for i in t for j in i]
+t = tuple(li)
+print("White" in t)
+print("Olive" in t)
+'''
 
 # 31. Compute Element-wise Sum of Given Tuples
 # Write a Python program to compute the element-wise sum of given tuples.
+'''
+a = (1, 2, 3, 4)
+b = (3, 5, 2, 1)
+c = (2, 2, 3, 1)
+res = []
+for i in range(len(a)):
+    res.append(a[i]+b[i]+c[i])
+print(tuple(res))
+'''
 
 # 32. Compute Sum of All Elements of Each Tuple in a List of Tuples
 # Write a Python program to compute the sum of all elements of each tuple in a list of tuples.
+'''
+li = [(1, 2), (2, 3), (3, 4)]
+res = [sum(i) for i in li]
+print(res)
+'''
 
 # 33. Convert a List of Tuples to a List of Lists
 # Write a Python program to convert a list of tuples to a list of lists.
+'''
+li = [(100,11),(200,12)]
+print(f"Original List : {li}")
+li = [list(i) for i in li]
+print(f"Updated List : {li}")
+'''
